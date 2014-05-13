@@ -1,3 +1,3 @@
-manumelbox
+Ninja
 ==========
-[![Build Status](https://travis-ci.org/vanbungkring/manumelbox.svg?branch=master)](https://travis-ci.org/vanbungkring/manumelbox)
+[![Build Status](https://travis-ci.org/vanbungkring/ninja.svg?branch=master)](https://travis-ci.org/vanbungkring/manumelbox)
