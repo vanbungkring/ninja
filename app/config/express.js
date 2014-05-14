@@ -1,4 +1,5 @@
 var path = require('path'),
+  expressLayouts = require('express-ejs-layouts'),
   favicon = require('static-favicon'),
   logger = require('morgan'),
   db = require('../model'),
@@ -6,13 +7,16 @@ var path = require('path'),
   cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
   routes = require('../routes/index');
+
 module.exports = function(app, express) {
   var expressc = this;
   // view engine setup
   app.set('views', path.join(__dirname, '../views'));
+  app.set('layout', '../views/layout') // defaults to 'layout'
   app.set('view engine', 'ejs');
 
   app.use(favicon());
+  app.use(expressLayouts)
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded());

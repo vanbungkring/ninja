@@ -6,7 +6,8 @@ exports.main = function(req, res) {
 
     function(callback) { //This is the first task, and callback is its callback task
       res.render('index', {
-        title: 'Express'
+        title: 'Express',
+        layout: 'layout'
       });
     }
   ], function(err) { //This is the final callback
