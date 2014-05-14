@@ -21,7 +21,7 @@
     "json-lookup": "^0.1.2",
     "lodash": "^2.4.1",
     "morgan": "~1.0.0",
-    "mysql": "^2.2.0",
+    "mysql": "^2.0.0-alpha8",
     "passport": "^0.2.0",
     "pdfcrowd": "^1.1.1",
     "request": "^2.34.0",
