@@ -1,10 +1,27 @@
 var fs = require('fs'),
   path = require('path'),
+  path = require('path'),
+  Lookup = require("json-lookup"),
+  db_path = require('../../config/config.json'),
+  netra = Lookup(db_path, process.env.NODE_ENV),
   Sequelize = require('sequelize'),
   lodash = require('lodash'),
-  sequelize = new Sequelize('', '', null),
-  db = {}
-
+  db = {};
+sequelize = new Sequelize(netra.database, netra.username, netra.password, {
+  dialect: netra.dialect, // or 'sqlite', 'postgres', 'mariadb'
+  port: 3306, // or 5432 (for postgres)
+})
+sequelize
+  .authenticate()
+  .complete(function(err) {
+    if ( !! err) {
+      console.log('Unable to connect to the database:', err)
+    } else {
+      console.log('Connection has been established successfully.')
+    }
+  })
+console.log(netra.host);
+console.log();
 fs
   .readdirSync(__dirname)
   .filter(function(file) {
